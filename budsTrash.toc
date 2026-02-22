@@ -1,0 +1,10 @@
+## Interface: 30300
+## Title: budsTrash
+## Notes: Automatically deletes blacklisted items from your bags.
+## Author: budtender
+## Version: 1.0
+## SavedVariables: budsTrashDB
+
+Core.lua
+Events.lua
+Commands.lua
