@@ -9,13 +9,16 @@ A minimalist, high-performance World of Warcraft Addon (3.3.5 / Ascension) to au
 - **Auto-Confirm**: Bypasses the "Are you sure you want to delete..." popup for blacklisted items.
 - **Account-Wide Storage**: Your blacklist is saved across your entire account.
 
+- **Graphical Interface**: Easily manage your blacklist through the standard Interface Options menu.
+
 ## Commands
 
 All commands can be prefixed with either `/bt` or `/budstrash`:
 
+- `/bt` - Opens the graphical options panel.
 - `/bt add [Item Link]` - Adds an item to your blacklist. Use Shift-Click on the item to insert its link.
 - `/bt remove [Item Link]` - Removes an item from your blacklist.
-- `/bt list` - Displays a list of all items currently on your blacklist.
+- `/bt list` - Displays a list of all items currently on your blacklist in the chat window.
 
 ## Installation
 
