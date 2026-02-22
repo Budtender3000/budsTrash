@@ -72,6 +72,7 @@ listText:SetMultiLine(true)
 listText:SetSize(350, 250)
 listText:SetAutoFocus(false)
 listText:SetFontObject("GameFontHighlight")
+listText:SetScript("OnEscapePressed", function(self) self:ClearFocus() end)
 listScroll:SetScrollChild(listText)
 
 -- Update List Function
