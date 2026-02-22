@@ -24,11 +24,19 @@ local function DeleteBlacklistedItems()
                         -- Delete the item
                         DeleteCursorItem()
                         
-                        -- Auto-confirm if a "DELETE_ITEM" or "DELETE_GOOD_ITEM" popups appears
-                        if StaticPopup_Visible("DELETE_GOOD_ITEM") then
-                            StaticPopup_OnClick(StaticPopup1, 1)
-                        elseif StaticPopup_Visible("DELETE_ITEM") then
-                            StaticPopup_OnClick(StaticPopup1, 1)
+                        -- Handle Delete Confirmation Popups
+                        for i = 1, STATICPOPUP_NUMDIALOGS do
+                            local dialog = _G["StaticPopup"..i]
+                            if dialog and dialog:IsVisible() and (dialog.which == "DELETE_ITEM" or dialog.which == "DELETE_GOOD_ITEM") then
+                                if dialog.editBox and dialog.editBox:IsVisible() then
+                                    dialog.editBox:SetText(DELETE_ITEM_CONFIRM_STRING)
+                                end
+                                local button = _G["StaticPopup"..i.."Button1"]
+                                if button then
+                                    button:Click()
+                                end
+                                break
+                            end
                         end
 
                         addonTable:Print("Deleted " .. itemLink)
@@ -43,7 +51,8 @@ end
 
 frame:SetScript("OnEvent", function(self, event, arg1)
     if event == "ADDON_LOADED" and arg1 == addonName then
-        budsTrashDB = budsTrashDB or addonTable.defaultDB
+        budsTrashDB = budsTrashDB or {}
+        budsTrashDB.blacklist = budsTrashDB.blacklist or {}
         print("|cFF00FF00budsTrash|r loaded. Type /bt to see options.")
         self:UnregisterEvent("ADDON_LOADED")
     elseif event == "BAG_UPDATE" then
