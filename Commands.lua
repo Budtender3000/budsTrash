@@ -35,9 +35,8 @@ SlashCmdList["BUDSTRASH"] = function(msg)
             print("Your blacklist is empty.")
         end
     else
-        print("|cFF00FF00budsTrash Commands:|r")
-        print("  /bt add [Item Link] - Adds an item to the blacklist")
-        print("  /bt remove [Item Link] - Removes an item")
-        print("  /bt list - Shows all blacklisted items")
+        -- Open the Interface Options panel
+        InterfaceOptionsFrame_OpenToCategory("budsTrash")
+        InterfaceOptionsFrame_OpenToCategory("budsTrash") -- calling twice works around a known Blizzard UI bug
     end
 end

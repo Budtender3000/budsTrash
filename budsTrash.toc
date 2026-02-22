@@ -8,3 +8,4 @@
 Core.lua
 Events.lua
 Commands.lua
+Options.lua
