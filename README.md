@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="assets/budstrash_logo.png" alt="budsTrash Logo" width="800" />
+</div>
+
 # budsTrash
 
 A minimalist, high-performance World of Warcraft Addon (3.3.5 / Ascension) to automatically delete blacklisted items from your bags. Perfect for clearing out low-value trash items looted by Ascension's auto-lootbot.
